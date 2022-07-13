@@ -1,6 +1,6 @@
 Type coercion
 ================
-Naomi Ekas
+Jieming Xiao
 
 -   `c(1, 1L, "C")`
 
@@ -29,10 +29,12 @@ c(1, 1L, "C")
     ## [1] "C"
 
 ``` r
-#typeof(c(1, 1L, "C"))
+typeof(c(1, 1L, "C"))
 ```
 
--   `c(1L / 0, "A")`
+    ## [1] "character"
+
+“character” - `c(1L / 0, "A")`
 
 ``` r
 c(1L / 0, "A")
@@ -64,9 +66,17 @@ typeof("A")
 
     ## [1] "character"
 
+c(1L / 0, “A”) \[1\] “Inf” “A”  
+\> typeof(1L) \[1\] “integer” \> typeof(0) \[1\] “double” \>
+typeof(1L/0) \[1\] “double” \> typeof(“A”) \[1\] “character”
+
 ``` r
-#typeof(c(1L / 0, "A"))
+typeof(c(1L / 0, "A"))
 ```
+
+    ## [1] "character"
+
+“character”
 
 -   `c(1:3, 5)`
 
@@ -88,9 +98,15 @@ typeof(5)
 
     ## [1] "double"
 
+typeof(1:3) \[1\] “integer” \> typeof(5) \[1\] “double”
+
 ``` r
-#typeof(c(1:3, 5))
+typeof(c(1:3, 5))
 ```
+
+    ## [1] "double"
+
+“double”
 
 -   `c(3, "3+")`
 
@@ -112,11 +128,15 @@ typeof("3+")
 
     ## [1] "character"
 
+“character”
+
 ``` r
-#typeof(c(3, "3+"))
+typeof(c(3, "3+"))
 ```
 
--   `c(NA, TRUE)`
+    ## [1] "character"
+
+“character” - `c(NA, TRUE)`
 
 ``` r
 c(NA, TRUE)
@@ -136,6 +156,12 @@ typeof(TRUE)
 
     ## [1] "logical"
 
+typeof(NA) \[1\] “logical” \> typeof(TRUE) \[1\] “logical”
+
 ``` r
-#typeof(c(NA, TRUE))
+typeof(c(NA, TRUE))
 ```
+
+    ## [1] "logical"
+
+> typeof(c(NA, TRUE)) \[1\] “logical”
